@@ -16,7 +16,9 @@ const sendMessageController = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ success: false, errors: errors.array() });
     }
-
+console.log(`contact 1`)
+    console.log(`contact ${JSON.stringify(req.body)}`)
+    console.log(`contact 12`)
     const { email, subject, message, username } = req.body;
 
     try {
@@ -26,8 +28,9 @@ const sendMessageController = async (req, res) => {
             return res.status(400).json({ success: false, message: 'User with the provided username does not exist' });
         }
 
-        await sendMessage(email, subject, message, username);
+      const result =  await sendMessage(email, subject, message, username);
 
+      console.log(`result in contactcontroller ${result.email}`)
         // Setting up the nodemailer transporter
         const transporter = nodemailer.createTransport({
             service: "Gmail",
@@ -40,7 +43,7 @@ const sendMessageController = async (req, res) => {
         // Email options for user
         const userMailOptions = {
             from: process.env.EMAIL_USER,
-            to: email,
+            to: result.email,
             subject: "Thank you for contacting us!",
             text: `Thank you for your message. We appreciate it and value your communication. Your words 
             mean a lot to us. If there's anything specific you'd like to discuss further, please let us know. Thanks again

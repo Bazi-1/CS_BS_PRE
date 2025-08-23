@@ -7,18 +7,22 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useDispatch, useSelector } from "react-redux";
 import { sendContactMessage, clearAlert } from "../../../store/help/contactSlice.tsx";
 import { RootState, AppDispatch } from "../../../store/store.tsx";
+import { getLocalStorageUser } from '../../imports/utility.tsx';
 
 const Contact: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
+    const username = getLocalStorageUser()?.username;
+    const email = getLocalStorageUser()?.email;
     const { alertMessage, alertSeverity } = useSelector((state: RootState) => state.contact);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
+         
         const data = {
-            username: formData.get("username") as string,
-            email: formData.get("email") as string,
+            username: username || '',
+            email: email || '',
             subject: formData.get("subject") as string,
             message: formData.get("message") as string,
         };
@@ -43,32 +47,6 @@ const Contact: React.FC = () => {
                     </Typography>
 
                     <form id="add-message-form" onSubmit={handleSubmit}>
-                        <div className="md:flex items-center mt-8">
-                            <div className="w-full md:w-1/2 flex flex-col">
-                                <label className="font-semibold leading-none">Name</label>
-                                <TextField
-                                    name="username"
-                                    placeholder="Your Name"
-                                    variant="outlined"
-                                    required
-                                    size="small" // Smaller size
-                                    className="leading-none text-gray-900 mt-3 bg-gray-100 border rounded border-gray-200"
-                                />
-                            </div>
-                            <div className="w-full md:w-1/2 flex flex-col md:ml-4 mt-4 md:mt-0">
-                                <label className="font-semibold leading-none">Email</label>
-                                <TextField
-                                    name="email"
-                                    type="email"
-                                    placeholder="Your Email"
-                                    variant="outlined"
-                                    required
-                                    size="small" // Smaller size
-                                    className="leading-none text-gray-900 mt-3 bg-gray-100 border rounded border-gray-200"
-                                />
-                            </div>
-                        </div>
-
                         <div className="md:flex items-center mt-6">
                             <div className="w-full flex flex-col">
                                 <label className="font-semibold leading-none">Subject</label>

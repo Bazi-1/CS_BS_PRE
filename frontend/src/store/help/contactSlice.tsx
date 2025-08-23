@@ -15,7 +15,10 @@ export const sendContactMessage = createAsyncThunk(
     "contact/sendMessage",
     async (data: { username: string; email: string; subject: string; message: string }, { rejectWithValue }) => {
         try {
+            console.log("frontend contact1")
             const response = await ContactService.sendMessage(data);
+                        console.log("frontend contact2")
+            console.log(`response for contact ${JSON.stringify(response)}`)
             if (response.data.success) return { message: "Your message has been sent successfully!", severity: "success" };
             return rejectWithValue({ message: response.data.message || "Failed to send message.", severity: "error" });
         } catch {
