@@ -1,0 +1,108 @@
+/* enrollment.css */
+
+/* General Styling */
+.enrollment-page {
+  background: #f8f9fa;
+  padding: 20px 0;
+}
+
+/* Course Items */
+.course-item {
+  flex: 1 1 calc(25% - 20px); /* Adjust box size */
+  margin: 10px; /* Add spacing between items */
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff, #f3e8ff);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.course-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.course-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.course-details h2 {
+  font-size: 1.2rem;
+  color: #5c3b7b;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-details p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Enroll Button */
+.enroll-button {
+  background: #5c3b7b;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.enroll-button:hover {
+  background: #472a5d;
+  transform: scale(1.1);
+}
+
+/* No Courses Styling */
+.no-courses-container {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+  }
+  
+  .no-courses-message {
+    font-size: 1.5rem;
+    color: #5c3b7b;
+    font-weight: bold;
+  }
+  
+  .add-course-suggestion {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .course-item {
+    flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .course-item {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .course-item {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+}

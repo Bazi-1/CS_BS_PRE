@@ -1,0 +1,152 @@
+/* General Styling */
+.courses-page {
+  background: #f8f9fa;
+  padding: 0px 0;
+}
+.udemy-style-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+  height: 200px;
+}
+
+.udemy-style-card:hover {
+  transform: scale(1.01);
+}
+
+.udemy-style-image {
+  width: 150px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.udemy-style-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.udemy-style-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.udemy-style-details .desc {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+  flex-grow: 1;
+}
+
+.udemy-style-details .instructor {
+  font-size: 13px;
+  color: #555;
+}
+
+.enroll-button {
+  margin-top: 3px;
+  padding: 6px 12px;
+  background-color: #f48024;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.enroll-button:hover {
+  background-color: #db6d1a;
+}
+
+.withdraw-container {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.withdraw-button {
+  padding: 6px 12px;
+  background-color: #f48024;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* No Courses Styling */
+.no-courses-container {
+  margin: 100px;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+}
+
+.no-courses-message {
+  font-size: 1.5rem;
+  color: #5c3b7b;
+  font-weight: bold;
+}
+
+.add-course-suggestion {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .course-item {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.course-modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.course-modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.course-modal-content p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+

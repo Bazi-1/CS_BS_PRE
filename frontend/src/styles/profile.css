@@ -1,0 +1,105 @@
+.profile-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.profile-pic-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon i {
+  font-size: 18px;
+}
+
+.profile-form .form-group {
+  margin-bottom: 20px;
+}
+
+.profile-form label {
+  font-weight: 600;
+  color: #555;
+}
+
+.profile-form .form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-group button {
+  border-radius: 6px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.discard-button,
+.save-button {
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.discard-button {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #000;
+}
+
+.discard-button:hover {
+  background-color: #e2e6ea;
+}
+
+.save-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}

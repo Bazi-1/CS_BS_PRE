@@ -1,0 +1,94 @@
+.prof-body {
+  font-family: Arial, sans-serif;
+  margin: 90px;
+  padding: 0;
+}
+
+.account-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 20px 20px rgba(2, 48, 187, 0.1);
+}
+
+.account-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #f7f8fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+.account-profile {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-icon {
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 3px solid var(--primary-color);
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 16px;
+  margin-right: auto;
+}
+
+.edit-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2a2d30; /* Adjust color for your design */
+  font-family: Arial, sans-serif;
+  font-size: 14px; /* Adjust font size */
+}
+
+.edit-link:hover {
+  text-decoration: underline; /* Optional hover effect */
+}
+
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px; /* Adjust spacing between icon and text */
+}

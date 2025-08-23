@@ -1,0 +1,205 @@
+
+.header {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #555;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-button img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.phone-number {
+  color: #000;
+  font-weight: 500;
+}
+
+.btn {
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn.black {
+  background: #817d7d;
+  color: #fff;
+}
+
+.btn.black:hover {
+  background-color: #7c7a7a; /* darker black */
+  transform: scale(1.05); /* subtle zoom effect */
+  cursor: pointer;
+}
+
+.btn.outline {
+  border: 5px solid black;
+  background: transparent;
+  color: black;
+}
+
+.btn.outline:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn.white {
+  color: white;
+  border: 2px solid white;
+  background: transparent;
+}
+
+.hamburger-menu {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background: rgb(253, 253, 253);
+  color: rgb(10, 10, 10);
+  width: 200px;
+  height: 100vh;
+  z-index: 1100;
+  transition: right 0.3s ease;
+  padding: 40px 20px;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-links a {
+  color: rgb(0, 0, 0);
+  font-family: 'Bebas Neue', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1050;
+  transition: all 0.3s ease;
+}
+
+.backdrop.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+
+.search-popup {
+  width: 90%;
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.search-submit-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn:hover, .search-submit-button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width: 768px) {
+  .nav-links,
+  .phone-number,
+  .btn.black,
+  .btn.outline,
+  .icon-button:nth-child(2) {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.public-footer {
+    z-index: 9999;
+    padding: 40px 0;
+    position: relative;
+}
+
+.fab {
+    padding: 1.5%;
+}
