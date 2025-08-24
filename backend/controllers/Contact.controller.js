@@ -9,6 +9,7 @@ const nodemailer = require("nodemailer");
  * @param {object} req - The request object.
  * @param {object} res - The response object.
  * @returns {object} - Response indicating success or failure.
+ *  Initial contact setup
  */
 const sendMessageController = async (req, res) => {
     const errors = validationResult(req);
