@@ -60,7 +60,9 @@ const getAllCoursesController = async (req, res) => {
     try {
 
         const {user_id} = req.query;
+        console.log(1)
         const courses = await getAllCourses(user_id);
+        console.log(`${JSON.stringify(courses)}`)
         res.status(200).json({ courses: courses });
     } catch (error) {
         // Handle errors

@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-         
+        
         const data = {
             username: username || '',
             email: email || '',

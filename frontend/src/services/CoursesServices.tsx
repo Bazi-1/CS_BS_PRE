@@ -1,20 +1,22 @@
 import http from "./http-common.tsx";
 
 const getCourses = (user_id) => {
-    return http.post('/graphql', {
-        query: `
-        query GetCourses($user_id: Int!) {
-          getCourses(user_id: $user_id) {
-            course_id
-            name
-            description
-            image
-            user_id
-          }
+  return http.post('/graphql', {
+    query: `
+      query GetCourses($user_id: Int!) {
+        getCourses(user_id: $user_id) {
+          course_id
+          name
+          description
+          image
+          user_id
+          num_lectures
+          total_duration_seconds
         }
-      `,
-        variables: { user_id },
-    });
+      }
+    `,
+    variables: { user_id },
+  });
 };
 
 
