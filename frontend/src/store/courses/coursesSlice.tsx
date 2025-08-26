@@ -4,16 +4,16 @@ import { CoursesService, EnrollmentCoursesService } from '../../components/impor
 import { getLocalStorageUser } from '../../components/imports/utility.tsx';
 
 interface Course {
-    course_id: string;
-    name: string;
-    instructor: string;
-    image: string;
-    description: string;
-    rating?: number;
-    students?: number;
-    duration?: string;
-    language?: string;
+  course_id: string;
+  name: string;
+  description: string;
+  instructor: string;
+  image: string;
+  num_lectures: number;
+  total_duration_seconds: number;
+  students: number;
 }
+
 
 interface CoursesState {
     allCourses: Course[];
@@ -67,7 +67,7 @@ const coursesSlice = createSlice({
                 state.filteredCourses = state.allCourses;
             } else {
                 state.filteredCourses = state.allCourses.filter(course =>
-                    action.payload.includes(course.language || 'English')
+                    action.payload.includes('English')
                 );
             }
         },

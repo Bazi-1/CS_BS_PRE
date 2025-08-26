@@ -243,29 +243,31 @@ const withdrawCourse = async (user_id, course_id) => {
  */
 const getAllCourses = async (user_id) => {
   try {
-    if (!user_id) {
-      const courses = await query(`SELECT
-    c.course_id,
-    c.name,
-    c.description,
-    c.instructor,
-    c.image,
-    COUNT(DISTINCT s.session_id) AS num_lectures,
-    COALESCE(SUM(EXTRACT(EPOCH FROM v.duration)), 0) AS total_duration_seconds,
-    COUNT(DISTINCT e.user_id) AS students,
+    console.log(`1 from service`);
+    // Fetch all courses (not filtering by specific course_id)
+    const courses = await query(
+      `
+      SELECT
+  c.course_id,
+  c.name,
+  c.description,
+  c.instructor,
+  c.image,
+  COUNT(DISTINCT s.session_id) AS num_lectures,
+  COALESCE(SUM(EXTRACT(EPOCH FROM v.duration)), 0) AS total_duration_seconds,
+  COUNT(DISTINCT e.user_id) AS students
 FROM course c
 LEFT JOIN sections sec ON sec.course_id = c.course_id
 LEFT JOIN session s ON s.section_id = sec.section_id
 LEFT JOIN video v ON v.session_id = s.session_id
-LEFT JOIN enrollments e ON e.course_id = c.course_id
-WHERE c.course_id = $1
-GROUP BY c.course_id`);
-      return courses;
-    }
-    const courses = await query(
-      "SELECT * FROM public.course WHERE user_id != $1",
+LEFT JOIN enrollment e ON e.course_id = c.course_id
+WHERE c.user_id != $1
+GROUP BY c.course_id, c.name, c.description, c.instructor, c.image;
+
+      `,
       [user_id]
     );
+    console.log(`courses ${JSON.stringify(courses)}`);
     return courses;
   } catch (error) {
     throw new Error(error);

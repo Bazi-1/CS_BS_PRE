@@ -60,6 +60,9 @@ const Courses_Page: React.FC = () => {
   const { courses, error } = useSelector((state: RootState) => state.banner);
 
   useEffect(() => {
+    console.log("courses value: ", courses);
+    console.log("selectedCourse: ", selectedCourse);
+
     dispatch(fetchCourses());
   }, [dispatch]);
 
@@ -213,24 +216,20 @@ const Courses_Page: React.FC = () => {
                   <p>
                     <strong>👨‍🏫 Instructor:</strong> {selectedCourse.instructor}
                   </p>
-                  <p style={{ marginRight: "10%" }}>
-                    <strong>⭐ Rating:</strong> {selectedCourse.rating || 4.5} /
-                    5
-                  </p>
                 </div>
                 <p>
-                  <strong>🏫 Num Lect:</strong>
+                  <strong>🏫 Num Lect:</strong> {selectedCourse.num_lectures}
                 </p>
                 <p>
-                  <strong>⏱ Duration:</strong>{" "}
-1
+                  <strong>⏱ Duration:</strong>
+                  {selectedCourse.total_duration_seconds}
                 </p>
                 <p>
                   <strong>👥 Students:</strong> {selectedCourse.students}
                 </p>
                 <p>
-                  <strong>⭐ Rating:</strong>{" "}
-                
+                  <strong>⭐ Rating:</strong> {selectedCourse.students || 4.5} /
+                  5
                 </p>
               </div>
             </div>
