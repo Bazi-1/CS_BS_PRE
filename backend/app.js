@@ -7,7 +7,8 @@ const methodOverride = require('method-override');
 const path = require('path');
 const { graphqlHTTP } = require('express-graphql');
 const rootSchema = require('./graphql/index');
-
+require('./socketServer');
+require('./expressRoutes')
 
 const port = process.env.PORT || 3001; // Set server port
 const app = express(); // Initialize Express application

@@ -12,9 +12,8 @@ import translateReducer from '../store/tools/translateSlice.tsx'
 import chatReducer from '../store/tools/chatSlice.tsx'
 import contactReducer from '../store/help/contactSlice.tsx'
 import faqReducer from '../store/help/FAQSlice.tsx'
-// import myCoursesReducer from '../store/myCourses/myCourseSlice.tsx'
-// import sectionsReducer from '../store/myCourses/sectionsSlice.tsx'
-// import sessionReducer from '../store/myCourses/sessionFormSlice.tsx'
+import rootReducer from '../redux-elements/reducers/rootReducer.js';
+
 
 const store = configureStore({
     reducer: {
@@ -31,6 +30,7 @@ const store = configureStore({
         chat:chatReducer,
         contact:contactReducer,
         faq:faqReducer,
+        rootreducer:rootReducer,
         // myCourses:myCoursesReducer,
         // sections:sectionsReducer,
 
