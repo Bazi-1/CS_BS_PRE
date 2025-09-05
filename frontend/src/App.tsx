@@ -32,6 +32,8 @@ import store from "./store/store.tsx";
 import EditCoursePage from "./components/pages/myCourses/editCoursePage.tsx";
 import socket from "./webRTCutilities/socketConnection.js";
 import MainVideoPage from "./videoComponents/MainVideoPage.js";
+import ProDashboard from "./siteComponents/ProDashboard.js";
+import ProMainVideoPage from "./videoComponents/ProMainVideoPage.js";
 
 const App: React.FC = () => {
   const user_id = getLocalStorageUser()?.user_id;
@@ -44,7 +46,9 @@ const App: React.FC = () => {
             <Header />
             <Routes>
               <Route path="/" element={<Navigate to="/Home" />} />
-              <Route path= "/join-video" element={<MainVideoPage/>}/>
+              <Route path="/join-video" element={<MainVideoPage />} />
+              <Route path="/dashboard" Component={ProDashboard} />
+              <Route path="/join-video-pro" Component={ProMainVideoPage} />
               <Route path="/Login" element={<LoginForm />} />
               <Route path="/Register" element={<Register />} />
               <Route path="/Home" element={<Home />} />

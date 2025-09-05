@@ -27,5 +27,7 @@ const io = socketio(expressServer,{
     ]
 })
 
-expressServer.listen(9000);
+expressServer.listen(3001, () => {
+    console.log(`Server is running on port ${3001}`);
+ });
 module.exports = { io, expressServer, app };
