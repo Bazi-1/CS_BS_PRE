@@ -25,8 +25,8 @@
 
 // app.set("view engine", "ejs"); // Set EJS as the view engine
 
-// app.use(cors());
-
+// app.use(cors()); 
+ 
 
 // // Import route modules
 // const users = require('./routes/User.routes');
