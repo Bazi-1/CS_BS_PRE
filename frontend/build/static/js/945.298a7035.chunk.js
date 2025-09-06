@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkletsscale=self.webpackChunkletsscale||[]).push([[945],{945:(e,s,c)=>{e.exports=c.p+"static/media/Screenshot 2025-08-19 155027.d722d2ec5a4f145c9a65.png"}}]);
