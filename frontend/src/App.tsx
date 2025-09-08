@@ -30,7 +30,9 @@ import ChatButton from "./components/pages/tools/ChatButton.tsx";
 import { Provider } from "react-redux";
 import store from "./store/store.tsx";
 import EditCoursePage from "./components/pages/myCourses/editCoursePage.tsx";
-
+import ProDashboard from './webrtc/siteComponents/ProDashboard';
+import ProMainVideoPage from './webrtc/videoComponents/ProMainVideoPage';
+import MainVideoPage from "./webrtc/videoComponents/MainVideoPage.js";
 const App: React.FC = () => {
   const user_id = getLocalStorageUser()?.user_id;
   return (
@@ -59,6 +61,10 @@ const App: React.FC = () => {
               <Route path="/Translate" element={<Translate />} />
               <Route path="/YourNotes" element={<YourNotes />} />
               <Route path="/AI" element={<ChatButton />} />
+              <Route path="/join-video" Component={MainVideoPage} />
+              <Route  path="/dashboard" Component={ProDashboard} />
+              <Route  path="/join-video-pro" Component={ProMainVideoPage} />
+      
             </Routes>
             <Footer />
           </ThemeProvider>
